@@ -1,13 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>농협 얼굴 측정</title>
+    <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <div id="MeasurePage">
+      <section id="Content">
+        <!-- 웹캠 비디오 스트림 -->
+        <video
+          id="input_video"
+          class="input_video"
+          muted="true"
+          width="640px"
+          height="480px"
+          autoplay
+          playsinline
+        ></video>
+
+        <!-- 얼굴 감지 결과를 그리는 캔버스 -->
+        <canvas class="output_canvas" width="320px" height="240px"></canvas>
+
+        <!-- 측정 가이드 프레임 -->
+        <div class="progress-bar"></div>
+
+        <!-- 사용자 안내 텍스트 -->
+        <div class="guide-text">원 안에 얼굴을 위치시켜 주세요</div>
+      </section>
+    </div>
+
+    <!-- SDK 사용 스크립트 -->
+    <script type="module" src="./src/main.ts"></script>
   </body>
 </html>
